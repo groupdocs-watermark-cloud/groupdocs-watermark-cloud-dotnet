@@ -34,41 +34,24 @@ The complete source code is available in this repository folder, you can either 
 ## Dependencies
 - [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json)
 
-## Getting Started
+
+## Get Supported File Formats for Watermark
 
 ```csharp
-using System;
-using System.Diagnostics;
-using GroupDocs.Watermark.Cloud.Sdk.Api;
+// Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+string MyClientId = "";
+string MyClientSecret = "";
 
-namespace Example
+// Create instance of the API
+var configuration = new Configuration(MyClientId, MyClientSecret);
+var api = new InfoApi(configuration);
+
+// Get supported file formats
+var response = api.GetSupportedFileFormats();
+
+foreach (var format in response.Formats)
 {
-    public class Example
-    {
-        public void Main()
-        {
-            //TODO: Get your AppSID and AppKey at https://dashboard.groupdocs.cloud (free registration is required).
-            var appSid = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
-            var appKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-
-            var api = new WatermarkApi(appSid, appKey);
-
-            try
-            {
-                // Get supported file formats
-                var response = api.GetSupportedFileFormats();
-
-                foreach (var format in response.Formats)
-                {
-                    Debug.Print(format.ToString());
-                }
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Something went wrong: " + e.Message);
-            }
-        }
-    }
+	Debug.Print(format.ToString());
 }
 ```
 
