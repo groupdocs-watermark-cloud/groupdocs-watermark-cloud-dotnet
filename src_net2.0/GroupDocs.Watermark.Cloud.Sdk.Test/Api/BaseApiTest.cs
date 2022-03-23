@@ -76,6 +76,7 @@ namespace GroupDocs.Watermark.Cloud.Sdk.Test.Api
 
         private void UploadTestFiles()
         {
+            DeleteFolderFromStorage("documents");
             foreach (var testFile in TestFiles.TestFilesList)
             {
                 var existRequest = new ObjectExistsRequest(testFile.FullName);

@@ -27,6 +27,7 @@ using GroupDocs.Watermark.Cloud.Sdk.Client;
 using GroupDocs.Watermark.Cloud.Sdk.Model;
 using GroupDocs.Watermark.Cloud.Sdk.Model.Requests;
 using GroupDocs.Watermark.Cloud.Sdk.Test.Api.Internal;
+using GroupDocs.Watermark.Cloud.Sdk.Test.Infrastructure;
 using NUnit.Framework;
 
 namespace GroupDocs.Watermark.Cloud.Sdk.Test.Api
@@ -83,7 +84,7 @@ namespace GroupDocs.Watermark.Cloud.Sdk.Test.Api
 
             var request = new ReplaceRequest(options);
             var ex = Assert.Throws<ApiException>(() => { WatermarkApi.Replace(request); });
-            Assert.AreEqual($"Can't find file located at '{testFile.FullName}'.", ex.Message);
+            Assert.AreEqual($"Can't find file located at '{testFile.FullName}'.", JsonUtils.GetErrorMessage(ex.Message));
         }
 
         [Test]
@@ -109,7 +110,7 @@ namespace GroupDocs.Watermark.Cloud.Sdk.Test.Api
 
             var request = new ReplaceRequest(options);
             var ex = Assert.Throws<ApiException>(() => { WatermarkApi.Replace(request); });
-            Assert.AreEqual($"Password provided for file '{testFile.FullName}' is incorrect.", ex.Message);
+            Assert.AreEqual($"Password provided for file '{testFile.FullName}' is incorrect.", JsonUtils.GetErrorMessage(ex.Message));
         }
 
         [Test]
@@ -131,7 +132,7 @@ namespace GroupDocs.Watermark.Cloud.Sdk.Test.Api
 
             var request = new ReplaceRequest(options);
             var ex = Assert.Throws<ApiException>(() => { WatermarkApi.Replace(request); });
-            Assert.AreEqual($"The specified file '{testFile.FullName}' has type which is not currently supported.", ex.Message);
+            Assert.AreEqual($"The specified file '{testFile.FullName}' has type which is not currently supported.", JsonUtils.GetErrorMessage(ex.Message));
         }
 
         [Test]
@@ -154,7 +155,7 @@ namespace GroupDocs.Watermark.Cloud.Sdk.Test.Api
 
             var request = new ReplaceRequest(options);
             var ex = Assert.Throws<ApiException>(() => { WatermarkApi.Replace(request); });
-            Assert.AreEqual("Request parameters missing or have incorrect format", ex.Message);
+            Assert.AreEqual("Request parameters missing or have incorrect format", JsonUtils.GetErrorMessage(ex.Message));
         }
 
         private void CheckIfWatermarkExist(string path, string watermarkText, FileInfo watermarkImage)
