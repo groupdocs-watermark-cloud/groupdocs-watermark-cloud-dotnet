@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose Pty Ltd" file="AssemblyInfo.cs">
-//  Copyright (c) 2003-2022 Aspose Pty Ltd
+//  Copyright (c) 2003-2023 Aspose Pty Ltd
 // </copyright>
 // <summary>
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,7 +34,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Aspose Pty Ltd")]
 [assembly: AssemblyProduct("GroupDocs.Watermark.Cloud.Sdk")]
-[assembly: AssemblyCopyright("Copyright 2003-2022 Aspose Pty Ltd")]
+[assembly: AssemblyCopyright("Copyright 2003-2023 Aspose Pty Ltd")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -53,5 +53,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("22.3")]
-[assembly: AssemblyFileVersion("22.3")]
+[assembly: AssemblyVersion("23.8")]
+[assembly: AssemblyFileVersion("23.8")]
