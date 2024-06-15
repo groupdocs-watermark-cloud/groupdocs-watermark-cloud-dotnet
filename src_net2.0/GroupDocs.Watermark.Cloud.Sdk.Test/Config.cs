@@ -30,6 +30,6 @@ namespace GroupDocs.Watermark.Cloud.Sdk.Test
         /* Get your AppSID and AppKey at https://dashboard.groupdocs.cloud/ (free registration is required) */
         public static string AppSid = "watermark.cloud";
         public static string AppKey = "watermark.cloud";
-        public static string ApiBaseUrl = "https://api-qa.groupdocs.cloud";
+        public static string ApiBaseUrl = "https://api.groupdocs.cloud";
     }
 }
